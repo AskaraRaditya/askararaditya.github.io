@@ -1,7 +1,38 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm Askara Raditya.</p>
-</body>
+  <head>
+    <style>
+      html,
+      body,
+      .container {
+        height: 100%;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body style="background-color: black; color: white">
+    <div class="container">
+      <h1 class="rickroll">
+        <u> About Me (click me) </u>
+      </h1>
+    </div>
+    <script>
+      const rickroll = function (event) {
+        event.preventDefault();
+        document.write("Get 'rolled lol");
+        window.setTimeout(function () {
+          document.body.innerHTML =
+            '<iframe width="1920" height="1080" src="https://www.youtube.com/embed/dQw4w9WgXcQ?&autoplay=1" frameborder="0"></iframe>';
+        }, 500);
+      };
+      document
+        .querySelectorAll(".rickroll")
+        .forEach((el) => el.addEventListener("click", rickroll));
+    </script>
+  </body>
 </html>
